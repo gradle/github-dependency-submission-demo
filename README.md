@@ -62,7 +62,7 @@ The fix is as simple as bumping the version in the project.
 
 We see 2 vulnerabilities reported for `org.apache.commons:commons-compress:1.24.0`, like this:
 
-<img width="800" alt="image" src="https://github.com/bigdaz/dependency-submission-demo/assets/179734/6d5bc043-6ff6-46f3-9166-d46096fe6bac">
+<img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/fff445b7-96b5-4437-b519-3889cdfb8b5e">
 
 But there isn't anywhere in our Gradle project where we add depend on `commons-compress`, which means this vulnerability
 must involve a _transitive_ dependency. The first step is to identify which direct dependency is responsible.
@@ -113,7 +113,7 @@ Vulnerabilities in these plugin dependencies are detected by the `dependency-sub
 
 The final 2 Dependabot alerts in this project are due to `com.squareup.okio:okio-jvm:3.2.0` and `com.squareup.okio:okio:3.2.0`. 
 
-<img width="800" alt="image" src="https://github.com/bigdaz/dependency-submission-demo/assets/179734/c9ca7b7b-2f07-4647-9201-7f00a0c167ce">
+<img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/a035a941-c434-43d7-a2a2-942c139a9cb9">
 
 When inspecting the Build Scan for these vulnerable versions, [we note that they are not listed in the 
 "Dependencies" section](https://scans.gradle.com/s/2hwggowm3vyts/dependencies?dependencies=okio&expandAll).
