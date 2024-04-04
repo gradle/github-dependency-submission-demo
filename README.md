@@ -4,7 +4,12 @@ This is a simple project demonstrating how to use the `dependency-submission` Gi
 vulnerable dependencies in a Gradle project, and various techniques to address these vulnerabilities.
 
 You may find it useful to fork this repository, which will allow you to follow this guide, viewing and resolve Dependabot alerts.
-Note that GitHub Actions workflows are not automatically enabled for repository forks, so you'll need to enable them via the "Actions" tab.
+Note that GitHub Actions workflows are not automatically enabled for repository forks. 
+To start the process, you'll need to:
+1. Fork the repository
+2. Navigate to "Settings -> Code security and analysis" and enable Dependency graph and Dependabot alerts (see below)
+3. Navigate to the "Actions" tab and enable workflows
+4. Push a commit to the 'main' branch in order to trigger the initial `dependency-submission` workflow to run. A change to the README will be sufficient.
 
 # Setting up the repository to detect vulnerable dependencies
 
