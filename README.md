@@ -3,7 +3,7 @@
 This is a simple project demonstrating how to use the `dependency-submission` GitHub action to detect
 vulnerable dependencies in a Gradle project, and various techniques to address these vulnerabilities.
 
-You may find it useful to fork this repository, which will allow you to follow this guide, viewing and resolve Dependabot alerts.
+You may find it useful to fork this repository, which will allow you to follow this guide, view and resolve Dependabot alerts.
 Note that GitHub Actions workflows are not automatically enabled for repository forks. 
 To start the process, you'll need to:
 1. Fork the repository
@@ -27,7 +27,7 @@ Note that the workflow is configured to publish a [Build Scan®](https://scans.g
 This Build Scan will contain information about your project structure and dependencies, 
 and will be useful later as we attempt to identify and resolve any vulnerable dependencies.
 
-See the [full dependency-submission documentatio](https://github.com/gradle/actions/blob/main/dependency-submission/README.md)n for more details on adding a dependency-submission workflow.
+See the [full dependency-submission documentation](https://github.com/gradle/actions/blob/main/dependency-submission/README.md) for more details on adding a dependency-submission workflow.
 
 # Reviewing vulnerabilities reported for this repository
 
@@ -64,12 +64,12 @@ We see 2 vulnerabilities reported for `org.apache.commons:commons-compress:1.24.
 
 <img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/fff445b7-96b5-4437-b519-3889cdfb8b5e">
 
-But there isn't anywhere in our Gradle project where we add depend on `commons-compress`, which means this vulnerability
+But there isn't anywhere in our Gradle project where we depend on `commons-compress`, which means this vulnerability
 must involve a _transitive_ dependency. The first step is to identify which direct dependency is responsible.
 
 The easiest way to do this is with a Gradle Build Scan®, which is why our workflow is
 configured to automatically publish a Build Scan for every dependency submission.
-You'll find the build-scan link in the [summary for each workflow run](https://github.com/gradle/github-dependency-submission-demo/actions/runs/8557095342#summary-23448497383).
+You'll find the Build Scan link in the [summary for each workflow run](https://github.com/gradle/github-dependency-submission-demo/actions/runs/8557095342#summary-23448497383).
 
 <img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/e7aafb1c-6821-4f7f-8800-b5f3ff33ef0a">
 
@@ -127,8 +127,8 @@ regular transitive dependencies, either by updating to a new version of the plug
 
 In this case there is no newer version of the plugin available, so we must add a dependency constraint to force a newer version of `okio` to be used.
 
-[This pull request](https://github.com/gradle/github-dependency-submission-demo/pull/4/files) adds a dependency constraint to the `buildscript` classpath, w
-hich fixes the security vulnerablitity in `okio` that is introduced by the `com.github.ben-manes.versions` plugin.
+[This pull request](https://github.com/gradle/github-dependency-submission-demo/pull/4/files) adds a dependency constraint to the `buildscript` classpath, 
+which fixes the security vulnerablitity in `okio` that is introduced by the `com.github.ben-manes.versions` plugin.
 
 <img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/f1b3420b-668c-4d24-8e73-7f35e998479e">
 
