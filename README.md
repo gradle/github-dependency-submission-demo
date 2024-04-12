@@ -115,12 +115,14 @@ The final 2 Dependabot alerts in this project are due to `com.squareup.okio:okio
 
 <img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/a035a941-c434-43d7-a2a2-942c139a9cb9">
 
-When inspecting the Build Scan for these vulnerable versions, [we note that they are not listed in the 
-"Dependencies" section](https://scans.gradle.com/s/2hwggowm3vyts/dependencies?dependencies=okio&expandAll).
-This is because these vulnerable versions are actually brought in by the `com.github.ben-manes.versions` plugin: 
-you can see this by [searching for 'okio' in the "Build Dependencies" section of the Build Scan](https://scans.gradle.com/s/2hwggowm3vyts/build-dependencies?dependencies=okio&expandAll&focusedDependency=WzAsMCwzMCxbMCwwLFszXV1d&focusedDependencyView=versions).
+When [searchinig for 'okio' in the **Dependencies** section of the Build Scan](https://scans.gradle.com/s/feschz3ywyb4c/dependencies?dependencies=okio&expandAll), 
+we note that there is a dependency on version `3.6.0` (required by `io.minio:minio:8.5.8`), but there is no dependency on vulnerable version `3.2.0`.
 
-<img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/1286e7b4-fdc1-4ed1-b694-4dbf26293afd">
+The reason you can't see `3.2.0` is because these vulnerable versions are actually brought in by the `com.github.ben-manes.versions` plugin and are listed separately. 
+
+You can see this by [searching in the **Build Dependencies** section of the Build Scan](https://scans.gradle.com/s/feschz3ywyb4c/build-dependencies?dependencies=okio&expandAll&focusedDependency=WzAsMCwyOSxbMCwwLFsyXV1d&focusedDependencyView=versions) instead.
+
+<img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/2c0ac67f-1032-4b43-9cff-385fde4a4cfa">
 
 Although vulnerable plugin dependencies like this can be trickier to identify, they can be resolved in much the same way as
 regular transitive dependencies, either by updating to a new version of the plugin, or by using a dependency constraint.
