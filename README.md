@@ -29,6 +29,16 @@ and will be useful later as we attempt to identify and resolve any vulnerable de
 
 See the [full dependency-submission documentation](https://github.com/gradle/actions/blob/main/dependency-submission/README.md) for more details on adding a dependency-submission workflow.
 
+# Viewing all dependencies for this repository
+
+Executing the `dependency-submission` workflow will submit the full graph of resolved dependencies to your repository. 
+You can view all of these dependencies, and search for a particular dependency [via the GitHub dependency graph view](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/exploring-the-dependencies-of-a-repository#viewing-the-dependency-graph).
+
+<img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/5ae5331a-4f34-457e-8d34-aa0e5e714309">
+
+Note that all dependencies reported by the action will be tagged with <code>Detected by **GitHub Dependency Graph Gradle Plugin**</code>.
+
+
 # Reviewing vulnerabilities reported for this repository
 
 After executing the `dependency-submission` workflow, the repository has 5 current Dependabot alerts for vulnerable dependencies. 
