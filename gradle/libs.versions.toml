@@ -8,4 +8,3 @@ junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version = "5.10.2"
 
 [plugins]
 versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
-
