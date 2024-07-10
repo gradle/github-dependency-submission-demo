@@ -9,7 +9,6 @@ repositories {
 dependencies {
     implementation(libs.commons.text)
     implementation(libs.minio)
-    implementation(libs.log4j)
 
     testImplementation(libs.junit.jupiter)
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
