@@ -3,6 +3,7 @@ name: Dependency review for pull requests
 
 on:
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: write
