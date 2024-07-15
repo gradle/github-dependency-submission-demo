@@ -3,6 +3,9 @@ name: Dependency review for pull requests
 
 on:
   pull_request:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -29,5 +32,12 @@ jobs:
     needs: dependency-submission
     runs-on: ubuntu-latest
     steps:
-    - name: Perform dependency review
+    - name: Perform dependency review on Pull Request
+      if: ${{ github.event-name == 'pull_request' }}
       uses: actions/dependency-review-action@v4
+    - name: Perform dependency review on Pull Request
+      if: ${{ github.event-name == 'push' }}
+      uses: actions/dependency-review-action@v4
+      with:
+        base-ref: ${{ github.event.before }}
+        head-ref: ${{ github.event.after }}
