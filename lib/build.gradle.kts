@@ -15,7 +15,6 @@ dependencies {
     constraints {
         // Force a newer version of commons-compress in transitive resolution
         implementation(libs.commons.compress)
-        implementation(libs.jackson)
     }
 
     testImplementation(libs.junit.jupiter)
