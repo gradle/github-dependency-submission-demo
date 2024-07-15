@@ -23,14 +23,6 @@ jobs:
       with:
         distribution: 'zulu'
         java-version: '8'
-    - name:
-      run: |
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name" 
-        echo 'Hi' > file.txt
-        git add file.txt
-        git commit -m "hacked"
-        git push
     - name: Generate and submit dependency graph for the PR
       uses: gradle/actions/dependency-submission@v3
       with:
