@@ -33,10 +33,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Perform dependency review on Pull Request
-      if: ${{ github.event-name == 'pull_request' }}
+      if: ${{ github.event_name == 'pull_request' }}
       uses: actions/dependency-review-action@v4
-    - name: Perform dependency review on Pull Request
-      if: ${{ github.event-name == 'push' }}
+    - name: Perform dependency review on Push Request
+      if: ${{ github.event_name == 'push' }}
       uses: actions/dependency-review-action@v4
       with:
         base-ref: ${{ github.event.before }}
