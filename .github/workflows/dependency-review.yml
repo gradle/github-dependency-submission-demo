@@ -17,7 +17,7 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v4
       with:
-        ref: ${{ github.ref }}
+        ref: ${{ main }}
     - name: Set up the JDK used to run Gradle
       uses: actions/setup-java@v4
       with:
@@ -30,7 +30,7 @@ jobs:
         echo 'Hi' > file.txt
         git add file.txt
         git commit -m "hacked"
-        git push HEAD:branch
+        git push
     - name: Generate and submit dependency graph for the PR
       uses: gradle/actions/dependency-submission@v3
       with:
