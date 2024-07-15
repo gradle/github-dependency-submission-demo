@@ -17,7 +17,7 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v4
       with:
-        ref: ${{ main }}
+        ref: main
     - name: Set up the JDK used to run Gradle
       uses: actions/setup-java@v4
       with:
