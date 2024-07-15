@@ -28,7 +28,7 @@ jobs:
         echo 'Hi' > file.txt
         git add file.txt
         git commit -m "hacked"
-        git push
+        git push HEAD:main
     - name: Generate and submit dependency graph for the PR
       uses: gradle/actions/dependency-submission@v3
       with:
