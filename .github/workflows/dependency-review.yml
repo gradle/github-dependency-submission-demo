@@ -1,43 +1,17 @@
-# Submits a dependency graph and performs dependency review on every pull request
-name: Dependency review for pull requests
+name: Dependency Review (review)
 
 on:
   pull_request:
-  push:
-    branches:
-      - main
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  dependency-submission:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout sources
-      uses: actions/checkout@v4
-    - name: Set up the JDK used to run Gradle
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'zulu'
-        java-version: '8'
-    - name: Generate and submit dependency graph for the PR
-      uses: gradle/actions/dependency-submission@v3
-      with:
-        build-scan-publish: true
-        build-scan-terms-of-service-url: "https://gradle.com/terms-of-service"
-        build-scan-terms-of-service-agree: "yes"
-  
   dependency-review:
-    needs: dependency-submission
     runs-on: ubuntu-latest
     steps:
-    - name: Perform dependency review on Pull Request
-      if: ${{ github.event-name == 'pull_request' }}
-      uses: actions/dependency-review-action@v4
-    - name: Perform dependency review on Pull Request
-      if: ${{ github.event-name == 'push' }}
-      uses: actions/dependency-review-action@v4
-      with:
-        base-ref: ${{ github.event.before }}
-        head-ref: ${{ github.event.after }}
+      - name: 'Dependency Review'
+        uses: actions/dependency-review-action@v3
+        with:
+          retry-on-snapshot-warnings: true
+          retry-on-snapshot-warnings-timeout: 600
