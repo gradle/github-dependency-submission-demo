@@ -11,7 +11,6 @@ dependencies {
     implementation(libs.commons.text)
     implementation(libs.minio)
     implementation(libs.jackson)
-    implementation(libs.spring)
 
     constraints {
         // Force a newer version of commons-compress in transitive resolution
