@@ -8,6 +8,7 @@ minio = { module = "io.minio:minio", version = "8.5.11" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version = "5.10.2" }
 okio = { module = "com.squareup.okio:okio", version = "3.4.0" }
 jackson = { module = "com.fasterxml.jackson.core:jackson-databind", version = "2.9.9" }
+spring = { module = "org.springframework.boot:spring-boot-starter-web", version = "2.5.11" }
 
 [plugins]
 versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
