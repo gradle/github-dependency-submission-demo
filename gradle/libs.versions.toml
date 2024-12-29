@@ -2,7 +2,7 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [libraries]
-commons-text = { module = "org.apache.commons:commons-text", version = "1.9" }
+commons-text = { module = "org.apache.commons:commons-text", version = "1.10.0" }
 minio = { module = "io.minio:minio", version = "8.5.8" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version = "5.10.2" }
 
