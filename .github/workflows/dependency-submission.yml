@@ -1,10 +1,9 @@
-# Submits a dependency graph on every push to 'main'
 name: Dependency Submission
 
 on:
   push:
-    branches:
-    - main
+    branches: [ 'main' ]
+  pull_request:
 
 permissions:
   contents: write
