@@ -39,13 +39,16 @@ You can view all of these dependencies, and search for a particular dependency [
 Note that all dependencies reported by the action will be tagged with <code>Detected by **GitHub Dependency Graph Gradle Plugin**</code>.
 
 
-# Reviewing vulnerabilities reported for this repository
+# Viewing vulnerabilities reported for this repository
 
 After executing the `dependency-submission` workflow, the repository has 5 current Dependabot alerts for vulnerable dependencies. 
 These are not publicly visible in the repo, but here is the list:
 
 <img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/1e9905c6-d1cf-40ea-bdc1-d42b70eafefe">
 
+# Fixing dependency vulnerabilities
+
+Vulnerable dependencies can be included in your project via a number of different mechanisms, each requiring a different fix.
 In the following sections we will step through the process of investigating, isolating and addressing different types of vulnerabilities.
 
 - [Updating a direct dependency to non-vulnerable version](#updating-a-direct-dependency-to-non-vulnerable-version)
@@ -53,7 +56,7 @@ In the following sections we will step through the process of investigating, iso
 - [Updating a transitive dependency using a dependency constraint](#updating-a-transitive-dependency-using-a-dependency-constraint)
 - [Updating a Plugin classpath dependency using a dependency constraint](#updating-a-plugin-classpath-dependency-using-a-dependency-constraint)
 
-# Updating a direct dependency to non-vulnerable version
+## Updating a direct dependency to non-vulnerable version
 
 In this example repository, a dependency on `org.apache.commons:commons-text:1.9` results in the following
 Dependabot alert:
@@ -68,7 +71,7 @@ The fix is as simple as bumping the version in the project.
 
 <img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/f6821ca1-e5fe-4894-bc5c-0944357cf6df">
 
-# Updating a vulnerable transitive dependency by updating a direct dependency
+## Updating a vulnerable transitive dependency by updating a direct dependency
 
 We see 2 vulnerabilities reported for `org.apache.commons:commons-compress:1.24.0`, like this:
 
@@ -96,7 +99,7 @@ resolving the 2 Dependabot alerts triggered by `org.apache.commons:commons-compr
 
 <img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/56e1290f-b92c-4f35-80cc-5797e56b036b">
 
-# Updating a transitive dependency using a dependency constraint
+## Updating a transitive dependency using a dependency constraint
 
 At times when you won't be able to update a direct dependency to resolve a transitive dependency vulnerability.
 This can occur if there isn't a newer version of the direct dependency available, or perhaps your project isn't
@@ -115,7 +118,7 @@ you can see that the version of `commons-compress` is updated, but the version o
 
 <img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/4b153141-b67c-4852-a2a0-f466cc07fa5e">
 
-# Updating a Plugin classpath dependency using a dependency constraint
+## Updating a Plugin classpath dependency using a dependency constraint
 
 In addition to things you declare in a `dependencies` block, any Gradle plugins that you apply to your build
 will likely have library dependencies. 
