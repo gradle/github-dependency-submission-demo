@@ -7,7 +7,7 @@ You may find it useful to fork this repository, which will allow you to follow t
 Note that GitHub Actions workflows are not automatically enabled for repository forks. 
 To start the process, you'll need to:
 1. Fork the repository
-2. Navigate to "Settings -> Code security and analysis" to enable Dependency graph and Dependabot alerts (see below)
+2. Navigate to "Settings -> Advanced Security" and enable Dependency graph and Dependabot alerts (see below)
 3. Navigate to the "Actions" tab to enable GitHub Actions workflows
 4. Push a commit to the 'main' branch in order to trigger the initial `dependency-submission` workflow to run. A change to the README will be sufficient.
 
