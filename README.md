@@ -17,7 +17,7 @@ In order to receive alerts about any vulnerable dependencies for this repository
 
 1. **Dependency graph and Dependabot alerts are enabled**
 
-<img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/7ecf6cc6-aec2-4985-8331-b9e9db78d312">
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/978e21bb-8082-4861-98a5-b42a41fa29a8" />
 
 2. **A simple `dependency-submission` workflow is configured to run on any push to the `main` branch**
 
