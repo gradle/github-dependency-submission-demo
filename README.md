@@ -44,7 +44,7 @@ Note that all dependencies reported by the action will be tagged with <code>Dete
 After executing the `dependency-submission` workflow, the repository has 5 current Dependabot alerts for vulnerable dependencies. 
 These are not publicly visible in the repo, but here is the list:
 
-<img width="800" alt="image" src="https://github.com/gradle/github-dependency-submission-demo/assets/179734/1e9905c6-d1cf-40ea-bdc1-d42b70eafefe">
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/99120685-bfd3-42c8-81cf-f750a041f7b8" />
 
 # Fixing dependency vulnerabilities
 
