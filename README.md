@@ -38,10 +38,9 @@ You can view all of these dependencies, and search for a particular dependency [
 
 Note that all dependencies reported by the action will be tagged with <code>Detected by **GitHub Dependency Graph Gradle Plugin**</code>.
 
-
 # Viewing vulnerabilities reported for this repository
 
-After executing the `dependency-submission` workflow, the repository has 5 current Dependabot alerts for vulnerable dependencies. 
+After executing the `dependency-submission` workflow, the repository has several current Dependabot alerts for vulnerable dependencies. 
 These are not publicly visible in the repo, but here is the list:
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/99120685-bfd3-42c8-81cf-f750a041f7b8" />
