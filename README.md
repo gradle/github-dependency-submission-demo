@@ -21,7 +21,7 @@ In order to receive alerts about any vulnerable dependencies for this repository
 
 2. **A simple `dependency-submission` workflow is configured to run on any push to the `main` branch**
 
-https://github.com/gradle/github-dependency-submission-demo/blob/a353fcb9c6a17d937f5988d95d10e28f1994fe03/.github/workflows/dependency-submission.yml#L1-L30
+https://github.com/gradle/github-dependency-submission-demo/blob/main/.github/workflows/dependency-submission.yml#L1-L30
 
 Note that the workflow is configured to publish a [Build Scan®](https://scans.gradle.com/#gradle) on each run. 
 This Build Scan will contain information about your project structure and dependencies, 
